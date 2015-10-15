@@ -38,7 +38,6 @@ class AddPictureViewController: UIViewController, UIImagePickerControllerDelegat
     }
 
     @IBAction func upLoadPicture(sender: AnyObject) {
-//        let imageData =
         if let imageData = UIImagePNGRepresentation(pictureView.image) {
             let imageFile = PFFile(data:imageData)
             var userPhoto = PFObject(className:"Images")
@@ -56,9 +55,7 @@ class AddPictureViewController: UIViewController, UIImagePickerControllerDelegat
                 }
             })
         } else {
-            
-//        let imageData = UIImagePNGRepresentation(pictureView.image)
-        
+
         var uploadError:UIAlertController = UIAlertController(title: "Upload Error", message: "Please select a picture from your gallery to upload!", preferredStyle: UIAlertControllerStyle.Alert)
         var defaultAction = UIAlertAction(title:"OK", style: UIAlertActionStyle.Default, handler: nil)
         uploadError.addAction(defaultAction)
